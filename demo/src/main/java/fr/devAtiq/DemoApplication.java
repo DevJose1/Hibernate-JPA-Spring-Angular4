@@ -32,6 +32,7 @@ public class DemoApplication implements CommandLineRunner{
 		contactRepository.save(new Contact("atiq", "Youssef", dateFormat.parse("20/07/1987"), "atiq@gmail.com", 685984632, "ATIQ.jpg"));
 		contactRepository.save(new Contact("atiq", "Yasmina",  dateFormat.parse("20/07/1990"),"atiqyasmina@gmail.com", 685984632, "ATIQ2.jpg"));
 		contactRepository.save(new Contact("atiq", "Sophia",   dateFormat.parse("20/07/2017"),"atiqSophia@gmail.com", 685984632, "ATIQ3.jpg"));
+		
 		contactRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
 		});

@@ -14,9 +14,12 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Contact implements Serializable{
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue
 	private Long id;
+	@Column
 	private String name;
+	@Column
 	private String firstName;
 	
 	@Basic

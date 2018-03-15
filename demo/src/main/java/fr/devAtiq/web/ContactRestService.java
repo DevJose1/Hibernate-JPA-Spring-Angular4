@@ -10,18 +10,15 @@ import antlr.collections.List;
 import fr.devAtiq.dao.ContactRepository;
 import fr.devAtiq.entities.Contact;
 
-
+//service rest 
 @RestController
 
 public class ContactRestService {
 
 	@Autowired
 	private ContactRepository contactRepository;
-	@RequestMapping(value="/contact/{id}", method= RequestMethod.GET)
-	public Contact getContatcs(@PathVariable Long id){
-		return contactRepository.findOne(id);
-		
-	}
+	
+
 	
 
 }
