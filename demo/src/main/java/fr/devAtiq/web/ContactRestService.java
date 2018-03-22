@@ -4,6 +4,7 @@ package fr.devAtiq.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import fr.devAtiq.entities.Contact;
 
 
 @RestController
-
+@CrossOrigin("*")
 public class ContactRestService {
 
 	@Autowired
@@ -32,14 +33,14 @@ public class ContactRestService {
 		return contactRepository.findOne(id);
 	
 	}
-	@RequestMapping(value="/searchContact", method=RequestMethod.GET)
-	public  Page<Contact> searchContact(
-			@RequestParam(name="mc", defaultValue="") String mc, 
-			@RequestParam(name="page", defaultValue="0") int page, 
-			@RequestParam(name="size", defaultValue="5") int size){
-		return contactRepository.searchContact(mc, new PageRequest(page, size));
 	
+	public  Page<Contact> searchContact(@RequestParam(name="mc", defaultValue="") String mc,
+			@RequestParam(name="page", defaultValue="0") int page,
+			@RequestParam(name="size", defaultValue="2") int size ){
+		return contactRepository.searchContact(mc, new PageRequest(page, size));
+		
 	}
+	
 	//to add contact
 	@RequestMapping(value="/contact/", method=RequestMethod.POST)
 	public  Contact save(@RequestBody Contact c){
@@ -50,13 +51,14 @@ public class ContactRestService {
 	public boolean delete(@PathVariable Long id){
 		 contactRepository.delete(id);
 		 return true;
-		 
-	/*@RequestMapping(value="/contact/{id}", method=RequestMethod.PUT)
+	}
+	
+	@RequestMapping(value="/contact/{id}", method=RequestMethod.PUT)
  
 	public Contact save(@PathVariable Long id, @RequestBody Contact c) {
 		c.setId(id);
 		
-		return  contactRepository.save(c);*/
+		return  contactRepository.save(c);
 		
 	}
 			

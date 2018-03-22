@@ -29,10 +29,11 @@ public class DemoApplication implements CommandLineRunner{
 
 		DateFormat dateFormat= new SimpleDateFormat("dd/MM/yyyy");
 		
-		contactRepository.save(new Contact("atiq", "Youssef", dateFormat.parse("20/07/1987"), "atiq@gmail.com", 685984632, "ATIQ.jpg"));
-		contactRepository.save(new Contact("atiq", "Yasmina",  dateFormat.parse("20/07/1990"),"atiqyasmina@gmail.com", 685984632, "ATIQ2.jpg"));
-		contactRepository.save(new Contact("atiq", "Sophia",   dateFormat.parse("20/07/2017"),"atiqSophia@gmail.com", 685984632, "ATIQ3.jpg"));
-		
+		contactRepository.save(new Contact("atiq", "Yssf", dateFormat.parse("20/07/1987"), "joseph1atiq@gmail.com", 685984632, "ATIQ.jpg"));
+		contactRepository.save(new Contact("atiq", "Sophia",  dateFormat.parse("14/03/2017"),"Sophia1atiq@gmail.com", 11111111, "ATIQ2.jpg"));
+		contactRepository.save(new Contact("atiq", "Yasmina",   dateFormat.parse("05/03/1990"),"yasmina_atiq@gmail.com", 2222222, "ATIQ3.jpg"));
+		contactRepository.save(new Contact("Dupont", "Charle",   dateFormat.parse("30/07/1965"),"Charle_Dupont@gmail.com", 2222222, "ATIQ3.jpg"));
+
 		contactRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
 		});

@@ -79,7 +79,7 @@ public class Contact implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Contact(String name, String firstName2, java.util.Date parse, String email, int phone, String image) {
+	public Contact(String name, String firstName, java.util.Date parse, String email, int phone, String image) {
 		super();
 		this.name = name;
 		this.firstName = firstName;
